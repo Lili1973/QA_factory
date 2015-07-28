@@ -2,7 +2,12 @@ package com.company;
 
 public class Main {
 
+    public  static int f()
+    {return 1000;
+    }
     public static void main(String[] args) {
+
+
 	// write your code here
         System.out.println("QA Factory");
         int x=10;
@@ -111,6 +116,90 @@ public class Main {
                 continue;
             }
             System.out.print(" " + i);
+        }
+
+
+        int[] operand1 = {76, 90, 4, 87, 70, 57, 48, 70, 31, 69, 18, 40, 76};
+        int[] operand2 = {76, 50, 36, 77, 87, 28, 98, 20, 20, 52, 86, 34, 34};
+        int[] expectedResults = {152, 140, 40, 164, 157, 85, 146, 90, 51, 121, 104, 74, 110};
+        int k=0;
+        while (k<13) {
+            if (expectedResults[k]==operand1[k] + operand2[k]){
+                System.out.println("true: TEST PASSED");
+            }
+            else {
+                System.out.println("FALSE TEST FAILED");
+            }
+            k=k+1;
+
+        }
+
+       /* //int[] notstrings = {1, 2, 3, 4, 1, 3, 1, 6, 6, 1, 1};
+        //int[] notstrings = {1, 2, 3, 4, 1, 3, 1, 6, 6, 1, 1};
+        int[] notstrings = {1, 7, 1, 4, 1, 7, 9, 6, 13, 1, 7};
+        //int target = 1;
+        //int target = 6;
+        int target = 7;
+        int count=0;
+        for (int j5 = 0; j5 < 10; j5=j5+1) {
+            if (notstrings[j5]==target){
+                count = count+1;
+            }
+        }
+        System.out.println("Coun element in massive: "+target+": " +count );*/
+        //////////////////function
+        int fun=f();
+        System.out.print(fun);
+        /////////////////////////
+        int[] notstrings = {1, 7, 1, 4, 1, 7, 9, 6, 13, 1, 7};
+        //int target = 1;
+        //int target = 6;
+        int target = 7;
+        System.out.println(fun(notstrings,target));
+
+        int s3=2;
+        System.out.print(f3(s3));
+        /////////
+
+        System.out.print(f4(2,"Hello"));
+    }
+    public static int fun(int [] ns, int t)
+    {
+
+        int count=0;
+        for (int j5 = 0; j5 < 10; j5=j5+1) {
+            if (ns[j5]==t){
+                count = count+1;
+            }
+        }
+        return count;
+    }
+
+    public static int f3(int p)
+    {
+        return p*p;
+    }
+    public static String f4(int p1, String strings )
+    {
+        String  strings1="";
+        int j=0;
+        while (j<p1) {
+            strings1=strings+strings1;
+            j=j+1;
+    }
+        return strings1;
+    }
+    public static boolean f5(int [] m6, int [] m7 )
+    {
+        boolean bool=true;
+
+        for (int j9=0;m6.length;j9++){
+            if (m6[j9]==m7[j9]) {
+                return bool;
+            }
+            else {
+            bool=false;
+            return bool;}
         }
     }
 }
