@@ -6,7 +6,9 @@ import java.util.Arrays;
 /**
  * Created by admin on 04.08.15.
  */
-public class New_lesson1 {
+public class New_lesson1
+{
+
     public static void main(String[] arg){
         ArrayList <Integer> a=new ArrayList<>();
         System.out.println(a.size());
@@ -21,6 +23,14 @@ public class New_lesson1 {
         Integer [] a1={1,2,10,20};
         a.addAll(Arrays.asList(a1));
         System.out.println(a);
+        int [] b={1,10,20,30};
+        for (int a11:b){
+            System.out.println(a11);
+        }
+        int a2=10;
+        int a3=1;
 
+        a3=a2 == 10 ? 1 : 2;
+        System.out.println(a3);
     }
 }
