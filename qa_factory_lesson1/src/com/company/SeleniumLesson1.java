@@ -1,10 +1,12 @@
 package com.company;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.security.spec.KeySpec;
+import java.util.List;
 
 /**
  * Created by admin on 04.08.15.
@@ -12,18 +14,29 @@ import java.security.spec.KeySpec;
 public class SeleniumLesson1 {
     public static void main(String[] arg){
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
-        ChromeDriver d = new ChromeDriver();
+        ChromeDriver drv = new ChromeDriver();
         //d.get("http://apppicker.com");
-        d.get("http://google.com");
+        drv.get("http://google.com");
         slp(2);
 
-        System.out.println(d.getTitle());
-        WebElement j=d.findElementByName("q");
+        System.out.println(drv.getTitle());
+        WebElement j=drv.findElementByName("q");
         j.sendKeys("котята");
         j.sendKeys(Keys.ENTER);
-        d.findElementByName("btnG").click();
+       // d.findElementByName("btnG").click();
+        drv.findElementByClassName("sbico").click();
+        System.out.println(j.getAttribute("value"));
+        slp(3);
+        WebElement d=drv.findElementByClassName("srg");
+        List<WebElement> res=d.findElements(By.tagName("a"));
+        WebElement res1=res.get(0);
+        System.out.println(res1.getText());
+        res1.click();
         slp(2);
-        d.quit();
+        System.out.println(drv.getTitle());
+        drv.navigate().back();
+        slp(2);
+        drv.quit();
     }
     public static void slp(long sec){
         try {
