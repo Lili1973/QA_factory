@@ -24,7 +24,7 @@ public class SeleniumLesson1 {
         j.sendKeys("котята");
         j.sendKeys(Keys.ENTER);
        // d.findElementByName("btnG").click();
-        drv.findElementByClassName("sbico").click();
+        //drv.findElementByClassName("sbico").click();
         System.out.println(j.getAttribute("value"));
         slp(3);
         WebElement d=drv.findElementByClassName("srg");
