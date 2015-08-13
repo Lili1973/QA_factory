@@ -17,9 +17,11 @@ public class Usexpath {
         System.out.println(drv.getTitle());
 
         WebElement j=drv.findElementByXPath("//[@name=q]");
+        j.sendKeys("котята");
+        j.sendKeys(Keys.ENTER);
+        System.out.println(j.getAttribute("value"));
+        slp(3);
 
-
-        System.out.println(j);
         slp(2);
 
     }
