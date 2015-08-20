@@ -16,7 +16,7 @@ public class Usexpath {
 
         System.out.println(drv.getTitle());
 
-        WebElement j=drv.findElementByXPath("//[@name=q]");
+        WebElement j=drv.findElementByXPath("//[@name='q']");
         j.sendKeys("котята");
         j.sendKeys(Keys.ENTER);
         System.out.println(j.getAttribute("value"));
