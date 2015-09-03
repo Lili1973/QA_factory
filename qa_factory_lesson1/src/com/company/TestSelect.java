@@ -30,7 +30,7 @@ public class TestSelect {
         sel3.selectByIndex(2);
         new Select(drv.findElementByXPath("//*[@id='period']")).selectByValue("7");
         new Select(drv.findElementByXPath("//*[@id='dgo']")).selectByVisibleText("да, на 200 000 грн");
-        
+
         slp(2);
         drv.quit();
     }
