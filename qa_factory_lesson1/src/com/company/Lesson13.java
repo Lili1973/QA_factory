@@ -4,10 +4,6 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
@@ -15,81 +11,166 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * Created by admin on 03.09.15.
  */
 public class Lesson13 {
-    public WebDriver drv;
     @Before
     public void beforeDriver(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
-        drv = new ChromeDriver();
-        drv.get("http://angel.net/~nic/passwd.current.html");
+        TestHelper.setup(AngelPage.url);
+        //TestHelper.get("http://angel.net/~nic/passwd.current.html");
     }
-
-@After
 
     @Test
     public void test1() {
-        setMaster("masterpass", drv);
-        setSitename("google.com", drv);
-        generate(drv);
-        System.out.println(getPassword(drv));
-        drv.quit();
+        AngelPage.setMaster("masterpass");
+        AngelPage.setSitename("google.com");
+        AngelPage.generate();
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test111() {
+        AngelPage.setMaster("masterpass");
+        AngelPage.setSitename("google.com");
+        AngelPage.generate();
+        AngelPage.setMaster("masterpass");
+        AngelPage.generate();
+        System.out.println(AngelPage.getPassword());
+        TestHelper.slp(5);
     }
     @Test
     public void test2() {
-        setMaster("hello", drv);
-        setSitename("google.com", drv);
-        generate(drv);
-        System.out.println(getPassword(drv));
-        drv.quit();
+        AngelPage.setMaster("hello");
+        AngelPage.setSitename("google.com");
+        AngelPage.generate();
+        System.out.println(AngelPage.getPassword());
+
     }
     @Test
     public void test3() {
-        setMaster("qwe123", drv);
-        setSitename("google.com", drv);
-        sendEnter(drv);
-        Assert.assertEquals("quSWcvR/lH8G8@1a", getPassword(drv));
-        System.out.println(getPassword(drv));
-        drv.quit();
+        AngelPage.setMaster("qwe123");
+        AngelPage.setSitename("google.com");
+        AngelPage.sendEnter();
+        Assert.assertEquals("quSWcvR/lH8G8@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+
     }
     @Test
     public void test4() {
-        setMaster("qwe123", drv);
-        setSitename("google.com", drv);
-        generate(drv);
-        Assert.assertEquals("quSWcvR/lH8G8@1a", getPassword(drv));
-        System.out.println(getPassword(drv));
-        drv.quit();
+        AngelPage.setMaster("qwe123");
+        AngelPage.setSitename("google.com");
+        AngelPage.generate();
+        Assert.assertEquals("quSWcvR/lH8G8@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+
     }
+    @Test
     public void test5() {
-        setMaster("", drv);
-        setSitename("", drv);
-        generate(drv);
-        Assert.assertEquals("quSWcvR/lH8G8@1a", getPassword(drv));
-        System.out.println(getPassword(drv));
-        drv.quit();
+        AngelPage.setMaster("");
+        AngelPage.setSitename("");
+        AngelPage.generate();
+        Assert.assertEquals("BaefBs8/Z/cm2@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test7() {
+        AngelPage.setMaster(" ");
+        AngelPage.setSitename(" ");
+        AngelPage.generate();
+        Assert.assertEquals("2YQR63Cwft+D6@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test8() {
+        AngelPage.setMaster("333");
+        AngelPage.setSitename("111");
+        AngelPage.generate();
+        Assert.assertEquals("CD/iUTsNwzV4v@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test9() {
+        AngelPage.setMaster("111");
+        AngelPage.setSitename("333");
+        AngelPage.generate();
+        Assert.assertEquals("A61tAOVfX4wCm@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test10() {
+        AngelPage.setMaster("~!@#$%^&*()_+{}|\":?></\\");
+        AngelPage.setSitename("~!@#$%^&*()_+{}|\":?></\\");
+        AngelPage.generate();
+        Assert.assertEquals("mWxGz2VYwGgZK@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test11() {
+        AngelPage.setMaster("qwe123");
+        AngelPage.setSitename("asd");
+        AngelPage.generate();
+        Assert.assertEquals("agdjoTB4cjI5E@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test12() {
+        AngelPage.setMaster("qwe123");
+        AngelPage.setSitename("ASD");
+        AngelPage.generate();
+        Assert.assertEquals("FkfaCm2ddwvDg@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test17() {
+        AngelPage.setMaster("1+1");
+        AngelPage.setSitename("");
+        AngelPage.generate();
+        Assert.assertEquals("BXYuMvgLoT5Ll@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test18() {
+        AngelPage.setMaster("2/0");
+        AngelPage.setSitename("2/0");
+        AngelPage.generate();
+        Assert.assertEquals("v3xY97+tXxAS5@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test19() {
+        AngelPage.setMaster("\"a\"");
+        AngelPage.setSitename("\"a\"");
+        TestHelper.slp(5);
+        AngelPage.generate();
+        Assert.assertEquals("vybb/hnwlLYhi@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test20() {
+        AngelPage.setMaster("\"([a-zA-Z]+) (\\d+)\"");
+        AngelPage.setSitename("\"([a-zA-Z]+) (\\d+)\"");
+        TestHelper.slp(5);
+        AngelPage.generate();
+        Assert.assertEquals("z3Bz38Fe3+Xef@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
+    }
+    @Test
+    public void test23() {
+        AngelPage.setMaster("999.999.999.999");
+        AngelPage.setSitename("999.999.999.999");
+        AngelPage.generate();
+        Assert.assertEquals("GlDQ/PeFN+t2k@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
     }
 
-    public static void setMaster(String value, WebDriver driver) {
-        driver.findElement(By.xpath("//*[@name='master']")).sendKeys(value);
-     }
-    public static void setSitename(String value, WebDriver driver) {
-        driver.findElement(By.xpath("//*[@name='site']")).sendKeys(value);
+    @Test
+    public void test24() {
+        AngelPage.setMaster("Feb 30, Sept 31");
+        AngelPage.setSitename("Feb 30, Sept 31");
+        AngelPage.generate();
+        Assert.assertEquals("OZ0T2U4X2eX4H@1a", AngelPage.getPassword());
+        System.out.println(AngelPage.getPassword());
     }
-    public static void generate(WebDriver driver) {
-        driver.findElement(By.xpath("//*[@value='Generate']")).click();
-    }
-    public static void sendEnter(WebDriver driver) {
-        driver.findElement(By.xpath("//*[@name='site']")).sendKeys(Keys.ENTER);
-    }
-    public static String getPassword(WebDriver driver) {
-        return driver.findElement(By.xpath("//input[@name='password']")).getAttribute("value");
+    @After
+    public void aftertest(){
+        TestHelper.quit();
     }
 
 
-    public static void slp(long sec){
-        try {
-            Thread.sleep(sec*1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 }

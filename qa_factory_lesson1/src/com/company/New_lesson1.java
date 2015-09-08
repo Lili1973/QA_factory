@@ -10,7 +10,7 @@ public class New_lesson1
 {
 
     public static void main(String[] arg){
-        ArrayList <Integer> a=new ArrayList<>();
+        ArrayList <Integer> a=new ArrayList<Integer>();
         System.out.println(a.size());
         a.add(10);
         a.add(5);
