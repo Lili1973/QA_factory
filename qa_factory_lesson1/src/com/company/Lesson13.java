@@ -25,16 +25,6 @@ public class Lesson13 {
         System.out.println(AngelPage.getPassword());
     }
     @Test
-    public void test111() {
-        AngelPage.setMaster("masterpass");
-        AngelPage.setSitename("google.com");
-        AngelPage.generate();
-        AngelPage.setMaster("masterpass");
-        AngelPage.generate();
-        System.out.println(AngelPage.getPassword());
-        TestHelper.slp(5);
-    }
-    @Test
     public void test2() {
         AngelPage.setMaster("hello");
         AngelPage.setSitename("google.com");
@@ -167,10 +157,67 @@ public class Lesson13 {
         Assert.assertEquals("OZ0T2U4X2eX4H@1a", AngelPage.getPassword());
         System.out.println(AngelPage.getPassword());
     }
+    @Test
+    //http://oxogamestudio.com/passwd.current2.htm
+    public void test27() {
+        AngelPage.setMaster("aaa");
+        AngelPage.setSitename("aaa");
+        AngelPage.generate();
+        Assert.assertEquals("aaa", AngelPage.getMaster());
+        System.out.println(AngelPage.getMaster());
+    }
+    @Test
+    //http://oxogamestudio.com/passwd.current2.htm
+    public void test28() {
+        AngelPage.setMaster("bbb");
+        AngelPage.setSitename("bbb");
+        AngelPage.generate();
+        Assert.assertEquals("bbb", AngelPage.getSiteName());
+        System.out.println(AngelPage.getSiteName());
+    }
+    @Test
+    public void test29() {
+        AngelPage.setMaster("ccc");
+        AngelPage.setSitename("ccc");
+        AngelPage.generate();
+        TestHelper.slp(5);
+        Assert.assertEquals(true, AngelPage.getEnabledMaster());
+        System.out.println(AngelPage.getEnabledMaster());
+    }
+    @Test
+    public void test30() {
+        AngelPage.setMaster("ddd");
+        AngelPage.setSitename("ddd");
+        AngelPage.generate();
+        TestHelper.slp(5);
+        Assert.assertEquals(true, AngelPage.getEnabledSiteName());
+        System.out.println(AngelPage.getEnabledSiteName());
+    }
+    @Test
+    public void test31() {
+        AngelPage.setMaster("eee");
+        AngelPage.setSitename("eee");
+        AngelPage.generate();
+        TestHelper.slp(5);
+        Assert.assertEquals(true, AngelPage.getEnabledPassword());
+        System.out.println(AngelPage.getEnabledPassword());
+    }
+    //http://oxogamestudio.com/passwd.current5.htm
+    @Test
+    public void test32() {
+        Assert.assertEquals("Your master password", AngelPage.nameFieldMaster());
+    }
+    @Test
+    public void test33() {
+        Assert.assertEquals("Site name", AngelPage.nameFieldSite());
+    }
+    @Test
+    public void test34() {
+        Assert.assertEquals("Generated password", AngelPage.nameGeneratePwd());
+    }
     @After
     public void aftertest(){
         TestHelper.quit();
     }
-
 
 }
