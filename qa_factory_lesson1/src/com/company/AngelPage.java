@@ -64,7 +64,7 @@ public class AngelPage {
     public static String nameGeneratePwd() {
         return TestHelper.drv.findElement(By.xpath("//tr[4]/td[1]")).getText();
     }
-    public static WebElement findElement(String targetXPath) {
+   /* public static WebElement findElement(String targetXPath) {
         if (drv.findElements(By.xpath(targetXPath)).size() > 0)
             {
                 break;
@@ -73,5 +73,5 @@ public class AngelPage {
         }
         return drv.findElement(By.xpath(targetXPath));
     }
-}
+}*/
 }
