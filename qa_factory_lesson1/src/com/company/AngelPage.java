@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 
 public class AngelPage {
 
-    public static String url = "http://oxogamestudio.com/passwd.current9.htm";
+    public static String url = "http://oxogamestudio.com/passwd.current8.htm";
     //"http://angel.net/~nic/passwd.current.html";
 
     public static void setMaster(String value) {
