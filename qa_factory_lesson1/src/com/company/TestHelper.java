@@ -12,8 +12,9 @@ public class TestHelper {
     public static String passwordField="//tr[4]/td[2]/input";
 
     public static void setup(){
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-                //"C:\\\\Automation\\\\Soft\\\\chromedriver_win32\\\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",
+                //"/usr/local/bin/chromedriver");
+                "C:\\Automation\\Soft\\chromedriver_win32\\chromedriver.exe");
         drv = new ChromeDriver();
     }
     public static void setup(String url){
