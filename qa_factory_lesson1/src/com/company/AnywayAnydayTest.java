@@ -14,7 +14,21 @@ public class AnywayAnydayTest {
     @Test
     public void test1() {
         AnywayAnyday.setLenguage("English");
-
+        TestHelper.slp(3);
+        //AnywayAnyday.setLenguage("Русский");
+        TestHelper.slp(3);
+        //AnywayAnyday.setLenguage("Deutsch");
+        TestHelper.slp(3);
+    }
+    @Test
+    public void test2() {
+        AnywayAnyday.setLenguage("Русский");
+        TestHelper.slp(3);
+    }
+    @Test
+    public void test3() {
+        AnywayAnyday.setLenguage("Deutsch");
+        TestHelper.slp(3);
     }
     @After
     public void aftertest(){

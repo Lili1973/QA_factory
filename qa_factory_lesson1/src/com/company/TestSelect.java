@@ -10,7 +10,7 @@ import java.util.Random;
 public class TestSelect {
     @Test
     public void test1() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Automation\\Soft\\chromedriver_win32\\chromedriver.exe");
         ChromeDriver drv = new ChromeDriver();
         drv.get("https://strahovator.com.ua/kupit_strahovku/avtocivilka_avtograzhdanka_osago_oscpv");
         WebElement s=drv.findElementByXPath("//*[@id='ts_type']");
